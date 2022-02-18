@@ -1312,10 +1312,16 @@ paths:
           application/json:
             schema:
               type: object
+              required:
+                - name
               properties:
                 name:
                   type: string
                   example: "A project name"
+                active:
+                  type: boolean
+                  example: true
+                  default: false
       responses:
         "200":
           description: Project created successfully
@@ -2764,21 +2770,21 @@ components:
         project:
           type: object
           properties:
-              id:
-                type: integer
-                example: 5
-              type:
-                type: string
-                example: "Project"
-              attributes:
-                  type: object
-                  properties:
-                    name:
-                      type: string
-                      example: "A project name"
-                    active:
-                      type: boolean
-                      example: true
+            id:
+              type: integer
+              example: 5
+            type:
+              type: string
+              example: "Project"
+            attributes:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: "A project name"
+                  active:
+                    type: boolean
+                    example: true
 
     AttendanceCreateRequest:
       type: object
